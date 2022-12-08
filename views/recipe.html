@@ -1,0 +1,101 @@
+{% extends "C:/Users/acer/Desktop/VS_Code_Lib/node playground/views/base.html" %}
+{% block content %}
+
+        <div class="jf--container">
+            <div class="jf--inner-container">
+                <h1 class="jf-header">
+                    {{recipeDetails.title}}
+                </h1>
+                <h3 class="jf--2nd-header">
+                    {{recipeDetails.subtitle}}
+                </h3>
+                <div>
+                    <span><strong>Makes</strong>{{recipeDetails.make}}</span>
+                    <span><strong>Cooks In</strong>{{recipeDetails.cook_time}}</span>
+                    <span><strong>Difficulty</strong>{{recipeDetails.difficulty}}</span>
+                </div>
+                <hr>
+
+                <h3 class="jf--2nd-header">INGREDIENTS</h3>
+                <div class="ingredients">
+                    <img src="JumboFishFingers.jpg" alt="" class="jf--img">
+                    
+                    <ul class="ingredients-list">
+                        {% for ingredient in recipeDetails.ingredients %}
+                            <li>{{ingredient}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <hr>
+                <h3 class="jf--2nd-header">METHOD</h3>
+                <ol class="method">
+                    <div></div>
+                    {% for method in recipeDetails.method %}
+                        <li>{{method}}</li>
+                    {% endfor %}
+                </ol>
+                <hr>
+                <h3 class="jf--2nd-header">User Comments</h3>
+                <button id="cmts-btn" data-rid="{{recipeDetails.id}}">see comments</button>
+                <div id="comments-container">
+                    <fieldset class="comments-fieldset" >
+                        <legend>Enter a comment:</legend>
+                        <div>
+                            <form class="comments-form" id="cmt-form">
+                                <strong>Name:</strong><br>
+                                <input type="text" class="comment-field-input" name="name-input">
+                                <br><br>
+                                <strong>Comment:</strong><br>
+                                <textarea class="comment-field-input" placeholder="Enter your comment here..." name="comment-input" cols="30" rows="5" form="cmt-form"></textarea>
+                                <br>
+                                <button id="submit-comment-btn" type="button">
+                                    <img src="{{plusImg}}" alt="" width="55">
+                                </button>
+                            </form>
+                        </div>
+                    </fieldset>
+                    <div class="comments-output" id="comments-output">
+                        <h5>All comments:</h5>
+                        <!-- {% for comment in recipeComments %}
+                            <blockquote class="comment comment-field-input">
+                                {{comment.comment}}
+                                <br>
+                                - {{comment.author}}
+                            </blockquote>
+                        {% endfor %} -->
+                    </div>
+                </div>
+                <hr>
+                <h3 class="jf--2nd-header">Sign-up to receive new recipes:</h3>
+                <form method="get" action="mailto:dd">
+                    <fieldset>
+                        <legend>Personal Information</legend>
+                        <div>
+                            <strong>Name:</strong><input type="text">
+                        </div>
+                        <br>
+                        <div>
+                            <strong>Email:</strong><input type="text" placeholder="xxxx@domain.com">
+                        </div>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>Types of recipes</legend>
+                        <span>Breakfast <input type="radio" name="recipe-type"></span>
+                        <span>Lunch <input type="radio" name="recipe-type"></span>
+                        <span>Dinner <input type="radio" name="recipe-type"></span>
+                    </fieldset>
+                    <br>
+                    <button >Sign Up</button>
+                </form>
+                <hr>
+                <h3 class="jf--2nd-header">LINKS</h3>
+                <a href="https://www.google.com/search?q=fish+fingers+recipe&start=10">Search for other fish fingers recipes</a>
+            </div>
+        </div>
+        <script type="text/javascript" src="/frontendJS.js">
+        </script>
+    
+
+{% endblock %}

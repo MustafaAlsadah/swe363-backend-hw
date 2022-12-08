@@ -1,0 +1,186 @@
+*{
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.index--imgs-container{
+    column-count: 3;
+    column-rule: solid #A4A400;
+}
+
+.index--img{
+    border-radius: 100%;
+    object-fit:cover;
+    width: 100%;
+}
+
+body{
+    background-image: url("./silverware.jpg");
+}
+
+.inner-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.index-header{
+    padding: 20px 15%;
+    background-color: #F0F0F0;
+    color: #A4A400;
+    border: solid 2.5px #73ad21;
+    border-radius: 18px;
+}
+
+.jf-header{
+    padding: 20px 1%;
+    width: 50%;
+    background-color: #F0F0F0;
+    color: #A4A400;
+    border: solid 2.5px #73ad21;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.jf--inner-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.jf--container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jf--2nd-header{
+    padding: 15px 1%;
+    width: 35%;
+    background-color: #F0F0F0;
+    color: #A4A400;
+    border: solid 2.5px #73ad21;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.ingredients{
+    /* column-count: 3; */
+    column-rule: solid #A4A400;
+}
+
+
+.jf--img{
+    border-radius: 100%;
+    object-fit:cover;
+    width: 70%;
+}
+
+.method{
+    /* column-count: 3; */
+    column-rule: solid #A4A400;
+}
+
+ul{
+    list-style-image: url("./fish_icon_24.png");
+
+}
+
+.comment{
+    background-color: #ffffa8;
+}
+
+.comments-fieldset{
+    width: 40%;
+}
+
+.comment-field-input{
+    width: 95%;
+}
+
+.comments-output{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+a:link{
+    color: #A4A400;
+}
+
+#comments-container{
+    display: none;
+}
+
+@media only screen and (max-width: 768px){
+    .index--imgs-container{
+        column-count: 1;
+    }
+    .inner-container{
+        max-width: 670px;
+    }
+    .index-header{
+        padding: 20px 27%;
+
+    }
+
+    .ingredients{
+        column-count: 1;
+    }
+    .method{
+        column-count: 1
+    }
+
+    .jf-header{
+        width: 90%;
+    }
+    .jf--2nd-header{
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .index--imgs-container{
+        column-count: 2;
+    }
+    .inner-container{
+        max-width: 800px;
+    }
+    .index-header{
+        padding: 20px 27%;
+    }
+
+    .ingredients{
+        column-count: 2;
+    }
+    .method{
+        column-count: 2;
+    }
+}
+
+@media only screen and (min-width: 992px){
+    .index--imgs-container{
+        column-count: 3;
+    }
+    .inner-container{
+        max-width: 1100px;
+    }
+    .jf--inner-container{
+        max-width: 1024px;
+    }
+
+    .ingredients{
+        column-count: 3;
+    }
+    .method{
+        column-count: 3;
+    }
+}
+
+

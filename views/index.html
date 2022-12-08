@@ -1,0 +1,29 @@
+{% block content %}
+<html lang="en">
+    <head>
+        <title>
+            All Awesome Recipies
+        </title>
+        <link rel="stylesheet" href="./FishRecipe.css">
+        <meta name="viewport" content="width=device-width,
+        initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">
+            <div class="inner-container">
+                <h2 class="index-header">All Awesome Recipes</h2>
+                <div class="index--imgs-container">
+                    {% for recipe in recipes %}
+                        <div>
+                            <a href="recipes/{{recipe.id}}">
+                                <img src="{{recipe.image}}" width="350vw" alt="" class="index--img">
+                            
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+{% endblock %}
+
